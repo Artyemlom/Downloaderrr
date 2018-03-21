@@ -26,7 +26,7 @@ web.run("https://pastebin.com/raw/k7zJp9TF")
 oopo4 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
 local ll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Downloader 2018")))
 local lll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Developers: Artyemlom, Sec@nd")))
-local llll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "v1.19")))
+local llll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "v1.2")))
 
 oopo4.hidden = true
 
