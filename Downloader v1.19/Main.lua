@@ -105,7 +105,6 @@ end
   baton2.onTouch = function()
 		if url2 then
 			tryToDownload(url2.text, newpatch .. name2.text)
-			GUI.error(newpatch .. name.text)
 			if erro == 0 then
 				url2.hidden = true
 				name2.hidden = true
