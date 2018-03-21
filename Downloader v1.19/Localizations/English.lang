@@ -1,0 +1,18 @@
+{
+	nameFile = "File name",
+	urlFile = "URL",
+	DostupFile = "The path to the folder",
+	DownloadFile = "Download",
+	nameSkript = "Skript name",
+	okkk = "Done",
+	failPatch = "Enter the correct path",
+	failUrl = "Enter corrected URL",
+	mainFile = "URL of the main file",
+	iconFile = "URL of the icon",
+	nameApp = "Application name",
+	namefail = "Enter the correct name",
+	mainfail = "Enter corrected URL",
+	helppp = "",
+	enter = "          ",
+	helpp = ""
+}
