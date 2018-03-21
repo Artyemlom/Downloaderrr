@@ -4,12 +4,12 @@ local web = require("web")
 local MineOSCore = require("MineOSCore")
 
 
-local mainContainer, window = MineOSInterface.addWindow(MineOSInterface.titledWindow(1, 1, 88, 25, "Downloader v1.15", true))
+local mainContainer, window = MineOSInterface.addWindow(MineOSInterface.titledWindow(1, 1, 88, 25, "Downloader v1.17", true))
 local menu = window:addChild(GUI.menu(1, 2, window.width, 0xE1E1E1, 0x666666, 0x3366CC, 0xFFFFFF, nil))
 local resourcesPath = MineOSCore.getCurrentScriptDirectory() 
 local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/") 
 
-web.run("https://pastebin.com/raw/RAWgHx67")
+web.run("https://pastebin.com/raw/7YGGC2Np")
 
 oopo = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
 local name = oopo:setCellPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0x555555, 0x888888, 0x4d4d4d, 0x262626, nil, localization.nameFile, false, nil, nil, nil)))
@@ -175,7 +175,7 @@ menu:addItem("Download application").onTouch = function()
 end
 
 menu:addItem("About").onTouch = function()
-	GUI.error("Downloader 2018 \nDevelopers: Artyemlom, Sec@nd\n v1.15")
+	GUI.error("Downloader 2018 \nDevelopers: Artyemlom, Sec@nd\n v1.17")
 end
 
 menu:addItem("Help").onTouch = function()
