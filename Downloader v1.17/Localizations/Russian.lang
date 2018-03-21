@@ -1,0 +1,17 @@
+{
+	nameFile = "Название файла",
+	urlFile = "URL",
+	DostupFile = "Путь к папке",
+	DownloadFile = "Загрузить",
+	nameSkript = "Название скрипта",
+	okkk = "Готово",
+	failPatch = "Введите корректый путь",
+	failUrl = "Введите корректый URL",
+	textDownload = "Загрузка",
+	innput = " в ",
+	mainFile = "URL главного файла",
+	iconFile = "URL иконки",
+	nameApp = "Название приложения",
+	namefail = "Введите корректое название",
+	mainfail = "Введите корректый URL",
+}
