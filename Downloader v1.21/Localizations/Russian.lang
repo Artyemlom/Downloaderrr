@@ -19,7 +19,7 @@
 	helpp = "Help ",
 	downSkript = "Скачать скрипт ",
 	downFile = "Скачать файл ",
-	downApp = "Скачать Приложение ",
+	downApp = "Скачать приложение ",
 	format = "Формат файла",
 	failDostup = "Заполните все поля!"
 }
