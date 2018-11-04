@@ -21,7 +21,7 @@ local menu = window:addChild(GUI.menu(1, 2, window.width, 0xE1E1E1, 0x666666, 0x
 local resourcesPath = MineOSCore.getCurrentScriptDirectory() 
 local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/") 
 
-web.run("https://pastebin.com/raw/awuCEDGH")
+web.run("https://pastebin.com/raw/7ym5G3CE")
 
 oopo4 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
 local ll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Downloader 2018")))
