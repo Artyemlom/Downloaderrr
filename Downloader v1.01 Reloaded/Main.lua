@@ -24,17 +24,17 @@ local function tryToDownload(...)
 	return success
 end
 
-local mainContainer, window, menu = system.addWindow(GUI.titledWindow(1, 1, 80, 30, "Downloader - 0.1 Reloaded"))
+local mainContainer, window, menu = system.addWindow(GUI.titledWindow(1, 1, 80, 30, "Downloader - v1 Reloaded"))
 --local mainContainer, window = MineOSInterface.addWindow(MineOSInterface.titledWindow(1, 1, 88, 25, "Downloader", true))
 local menu = window:addChild(GUI.menu(1, 2, window.width, 0xE1E1E1, 0x666666, 0x3366CC, 0xFFFFFF, nil))
 local localization = system.getCurrentScriptLocalization()
 
-web.run("https://pastebin.com/raw/bV85ACLR") 
+web.run("https://pastebin.com/raw/bV85ACLR")
 
 oopo4 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
 local ll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Downloader 2018-2020")))
 local lll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Developers: Artyemlom, Sec@nd")))
-local llll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "v1.01 Reloaded")))
+local llll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "v1 Reloaded")))
 
 oopo4.hidden = true
 
