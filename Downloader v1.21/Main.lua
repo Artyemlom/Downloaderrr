@@ -3,12 +3,11 @@ local MineOSInterface = require("MineOSInterface")
 local web = require("web")
 local MineOSCore = require("MineOSCore")
 
-
 local erro = 0
 local function tryToDownload(...)
 	local success, reason = web.download(...)
 	if not success then
-		GUI.error(reason)
+		GUI.alert(reason)
 		erro = 1
 	else
 		erro = 0
@@ -16,7 +15,7 @@ local function tryToDownload(...)
 	return success
 end
 
-local mainContainer, window = MineOSInterface.addWindow(MineOSInterface.titledWindow(1, 1, 88, 25, "Downloader", true))
+local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(1, 1, 88, 25, "Downloader", true))
 local menu = window:addChild(GUI.menu(1, 2, window.width, 0xE1E1E1, 0x666666, 0x3366CC, 0xFFFFFF, nil))
 local resourcesPath = MineOSCore.getCurrentScriptDirectory() 
 local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/") 
@@ -24,33 +23,33 @@ local localization = MineOSCore.getLocalization(resourcesPath .. "Localizations/
 web.run("https://pastebin.com/raw/awuCEDGH")
 
 oopo4 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
-local ll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Downloader 2018")))
-local lll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Developers: Artyemlom, Sec@nd")))
-local llll = oopo4:setCellPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "v1.21")))
+local ll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Downloader 2018")))
+local lll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Developers: Artyemlom, Sec@nd")))
+local llll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "v1.21")))
 
 oopo4.hidden = true
 
 local okey = 0
 oopo = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
-oopo:setCellPosition(2, 1, oopo:addChild(GUI.text(1, 1, 0x0, "")))
-local name = oopo:setCellPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.nameFile, false, nil, nil, nil)))
+oopo:setPosition(2, 1, oopo:addChild(GUI.text(1, 1, 0x0, "")))
+local name = oopo:setPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.nameFile, false, nil, nil, nil)))
 name.onInputFinished = function(mainContainer, input, eventData, text)
 	okey = okey + 1
 end
-local fel = oopo:setCellPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.format, false, nil, nil, nil)))
+local fel = oopo:setPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.format, false, nil, nil, nil)))
 fel.onInputFinished = function(mainContainer, input, eventData, text)
 	okey = okey + 1
 end
-local url = oopo:setCellPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.urlFile, false, nil, nil, nil)))
+local url = oopo:setPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.urlFile, false, nil, nil, nil)))
 url.onInputFinished = function(mainContainer, input, eventData, text)
 	okey = okey + 1
 end
-local filesystemChooser = oopo:setCellPosition(2, 1, oopo:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
-local baton = oopo:setCellPosition(2, 1, oopo:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
-local status = oopo:setCellPosition(2, 1, oopo:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
-local statuspro = oopo:setCellPosition(2, 1, oopo:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
-local ok = oopo:setCellPosition(2, 1, oopo:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
-filesystemChooser:setMode(GUI.filesystemModes.open, GUI.filesystemModes.directory)
+local filesystemChooser = oopo:setPosition(2, 1, oopo:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
+local baton = oopo:setPosition(2, 1, oopo:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
+local status = oopo:setPosition(2, 1, oopo:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
+local statuspro = oopo:setPosition(2, 1, oopo:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
+local ok = oopo:setPosition(2, 1, oopo:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
+filesystemChooser:setMode(GUI.IO_MODE_OPEN, GUI.IO_MODE_DIRECTORY)
 newpatch = "/MineOS/Desktop/"
 
 filesystemChooser.onSubmit = function(patch)
@@ -102,30 +101,30 @@ status.hidden = true
 			name.text = ""
 			fel.text = ""
 			url.text = ""
-			GUI.error(localization.failDostup)
+			GUI.alert(localization.failDostup)
 		end	
 	end
 	
 local okey2 = 0
 oopo2 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
-oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.text(1, 1, 0x0, "")))
-local name2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x888888, 0x4d4d4d, 0x555555, nil, localization.nameSkript, false, nil, nil, nil)))
+oopo2:setPosition(2, 1, oopo2:addChild(GUI.text(1, 1, 0x0, "")))
+local name2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x888888, 0x4d4d4d, 0x555555, nil, localization.nameSkript, false, nil, nil, nil)))
 name2.onInputFinished = function(mainContainer, input, eventData, text)
 	okey2 = okey2 + 1
 end
-local url2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x888888, 0x4d4d4d, 0x555555, nil, localization.urlFile, false, nil, nil, nil)))
+local url2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x888888, 0x4d4d4d, 0x555555, nil, localization.urlFile, false, nil, nil, nil)))
 url2.onInputFinished = function(mainContainer, input, eventData, text)
 	okey2 = okey2 + 1
 end
-local filesystemChooser2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
-local baton2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
-local status2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
-local statuspro2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
-local ok2 = oopo2:setCellPosition(2, 1, oopo2:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
+local filesystemChooser2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
+local baton2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
+local status2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
+local statuspro2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
+local ok2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
 ok2.hidden = true
 statuspro2.hidden = true
 status2.hidden = true
-filesystemChooser2:setMode(GUI.filesystemModes.open, GUI.filesystemModes.directory)
+filesystemChooser2:setMode(GUI.IO_MODE_OPEN, GUI.IO_MODE_DIRECTORY)
 filesystemChooser2.onSubmit = function(patch)
 	newpatch = tostring (patch)
 end
@@ -159,13 +158,13 @@ end
 					ok2.hidden = false
 				end
 			else
-				GUI.error(localization.failUrl)
+				GUI.alert(localization.failUrl)
 			end
 		else
 			okey2 = 0
 			name2.text = ""
 			url2.text = ""
-			GUI.error(localization.failDostup)
+			GUI.alert(localization.failDostup)
 		end	
 	end
 	oopo2.hidden = true
@@ -173,15 +172,15 @@ end
 	
 local okey3 = 0 
 oopo3 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
-oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.text(1, 1, 0x0, "")))
-local name3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.nameApp, false, nil, nil, nil)))
-local url3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.mainFile, false, nil, nil, nil)))
-local url23 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.iconFile, false, nil, nil, nil)))
-local filesystemChooser3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
-local baton3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
-local status3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
-local statuspro3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
-local ok3 = oopo3:setCellPosition(2, 1, oopo3:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
+oopo3:setPosition(2, 1, oopo3:addChild(GUI.text(1, 1, 0x0, "")))
+local name3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.nameApp, false, nil, nil, nil)))
+local url3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.mainFile, false, nil, nil, nil)))
+local url23 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.iconFile, false, nil, nil, nil)))
+local filesystemChooser3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
+local baton3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
+local status3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
+local statuspro3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
+local ok3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
 
 name3.onInputFinished = function(mainContainer, input, eventData, text)
 	okey3 = okey3 + 1
@@ -196,7 +195,7 @@ end
 ok3.hidden = true
 statuspro3.hidden = true
 status3.hidden = true
-filesystemChooser3:setMode(GUI.filesystemModes.open, GUI.filesystemModes.directory)
+filesystemChooser3:setMode(GUI.IO_MODE_OPEN, GUI.IO_MODE_DIRECTORY)
 filesystemChooser3.onSubmit = function(patch)
 	newpatch = tostring (patch)
 end
@@ -242,16 +241,16 @@ end
 							url23.text = ""
 						end
 					else
-						GUI.error(localization.mainfail)
+						GUI.alert(localization.mainfail)
 					end
 				else
-					GUI.error(localization.mainfail)
+					GUI.alert(localization.mainfail)
 				end
 			else
-				GUI.error(localization.namefail)
+				GUI.alert(localization.namefail)
 			end
 		else
-			GUI.error(localization.failDostup)
+			GUI.alert(localization.failDostup)
 		end
 	end	
 	
@@ -333,7 +332,7 @@ menu:addItem("About").onTouch = function()
 end
 
 menu:addItem(localization.helpp).onTouch = function()
-	GUI.error(localization.helppp)
+	GUI.alert(localization.helppp)
 	name3.text = ""
 	url3.text = ""
 	url23.text = ""
@@ -346,3 +345,5 @@ menu:addItem(localization.helpp).onTouch = function()
 	okey2 = 0
 	okey3 = 0
 end
+
+mainContainer:drawOnScreen()
