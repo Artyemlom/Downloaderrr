@@ -1,7 +1,4 @@
 local GUI = require("GUI")
---local MineOSInterface = require("MineOSInterface")
---local web = require("web")
---local MineOSCore = require("MineOSCore")
 local system = require("System")
 local imageL = require("Image")
 local component = require("component")
