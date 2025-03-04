@@ -7,6 +7,7 @@ local imageL = require("Image")
 local component = require("component")
 local filesystem = require("Filesystem")
 local event = require("Event")
+local paths = require("Paths")
 local number = require("Number")
 local web = require("Internet")
 local keyboard = require("Keyboard")
@@ -28,7 +29,7 @@ local mainContainer, window, menu = system.addWindow(GUI.titledWindow(1, 1, 80, 
 local menu = window:addChild(GUI.menu(1, 2, window.width, 0xE1E1E1, 0x666666, 0x3366CC, 0xFFFFFF, nil))
 local localization = system.getCurrentScriptLocalization()
 
-web.run("https://pastebin.com/raw/bV85ACLR")
+web.run("https://pastebin.com/raw/T6C3mNjV")
 
 oopo4 = window:addChild(GUI.layout(1, 1, window.width, window.height, 3, 1))
 local ll = oopo4:setPosition(2, 1, oopo4:addChild(GUI.text(3, 2, 0x0, "Downloader 2018-2025")))
@@ -52,13 +53,13 @@ local url = oopo:setPosition(2, 1, oopo:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d
 url.onInputFinished = function(mainContainer, input, eventData, text)
 	okey = okey + 1
 end
-local filesystemChooser = oopo:setPosition(2, 1, oopo:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
+local filesystemChooser = oopo:setPosition(2, 1, oopo:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, paths.user.desktop, "OK", "Cancel", "Choose", "/")))
 local baton = oopo:setPosition(2, 1, oopo:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
 local status = oopo:setPosition(2, 1, oopo:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
 local statuspro = oopo:setPosition(2, 1, oopo:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
 local ok = oopo:setPosition(2, 1, oopo:addChild(GUI.button(1, 1, 30, 3, 0x588224, 0xEEEEEE, 0x94fc6a, 0xEEEEEE, localization.okkk)))
 filesystemChooser:setMode(GUI.IO_MODE_OPEN, GUI.IO_MODE_DIRECTORY )
-newpatch = "/MineOS/Desktop/"
+newpatch = paths.user.desktop
 
 filesystemChooser.onSubmit = function(patch)
 	newpatch = tostring (patch)
@@ -124,7 +125,7 @@ local url2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.input(1, 1, 40, 3, 0x4d4
 url2.onInputFinished = function(mainContainer, input, eventData, text)
 	okey2 = okey2 + 1
 end
-local filesystemChooser2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
+local filesystemChooser2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, paths.user.desktop, "OK", "Cancel", "Choose", "/")))
 local baton2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
 local status2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
 local statuspro2 = oopo2:setPosition(2, 1, oopo2:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
@@ -184,7 +185,7 @@ oopo3:setPosition(2, 1, oopo3:addChild(GUI.text(1, 1, 0x0, "")))
 local name3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.nameApp, false, nil, nil, nil)))
 local url3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.mainFile, false, nil, nil, nil)))
 local url23 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.input(1, 1, 40, 3, 0x4d4d4d, 0xb8b8b8, 0xb8b8b8, 0x4d4d4d, 0x555555, nil, localization.iconFile, false, nil, nil, nil)))
-local filesystemChooser3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, "/MineOS/Desktop/", "OK", "Cancel", "Choose", "/")))
+local filesystemChooser3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.filesystemChooser(2, 2, 40, 3, 0x4d4d4d, 0xb8b8b8, 0x808080, 0xffffff, paths.user.desktop, "OK", "Cancel", "Choose", "/")))
 local baton3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.button(1, 1, 40, 3, 0xd44e4e, 0xEEEEEE, 0xfc6a6a, 0xEEEEEE, localization.DownloadFile)))
 local status3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.text(3, 2, 0x1d1d1f, "None")))
 local statuspro3 = oopo3:setPosition(2, 1, oopo3:addChild(GUI.progressBar(2, 2, 50, 0x4650c2, 0xEEEEEE, 0x000000, 0, true, true, "", "")))
