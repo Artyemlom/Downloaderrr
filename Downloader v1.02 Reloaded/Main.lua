@@ -338,18 +338,3 @@ menu:addItem("About").onTouch = function()
 	okey2 = 0
 	okey3 = 0
 end
-
-menu:addItem(localization.helpp).onTouch = function()
-	GUI.alert(localization.helppp)
-	name3.text = ""
-	url3.text = ""
-	url23.text = ""
-	fel.text = ""
-	name.text = ""
-	url.text = ""
-	name2.text = ""
-	url2.text = ""
-	okey = 0
-	okey2 = 0
-	okey3 = 0
-end
